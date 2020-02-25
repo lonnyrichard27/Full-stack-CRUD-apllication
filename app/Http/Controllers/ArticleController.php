@@ -16,7 +16,7 @@ class ArticleController extends Controller
     public function index()
     {
         // get articles
-        $articles = Article::paginate(15);
+        $articles = Article::orderBy('created_at', 'desc')->paginate(5);
 
         // return the collection of articles as a resource
         // the collection function is as stated in the docs that if youre returning a list of resources you should use
